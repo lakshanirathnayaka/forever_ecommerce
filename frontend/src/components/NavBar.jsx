@@ -43,7 +43,10 @@ const NavBar = () => {
     <>
       {/* Desktop Navbar - Top */}
       <div className='navbar-desktop'>
+        <Link to='/'>
         <img src={assets.logo} className='w-36' alt="Company Logo" />
+        </Link>
+        
         
         <ul className='navbar-desktop-menu'>
           <li className='flex flex-col items-center gap-1'>
