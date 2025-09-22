@@ -55,8 +55,8 @@ const LatestCollection = () => {
         </p>
       </div>
       
-      {/* Rendering products */}
-      <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>
+      {/* Modified grid with explicit responsive classes */}
+     <div className='grid grid-cols-1 min-[480px]:grid-cols-2 min-[640px]:grid-cols-3 min-[768px]:grid-cols-4 min-[1024px]:grid-cols-5 gap-4 gap-y-10'>
         {latestProducts.map((item) => (
           <ProductItem 
             key={item.id} 

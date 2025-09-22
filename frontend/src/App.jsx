@@ -1,6 +1,7 @@
 // App.jsx - Responsive Layout
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
+import './style/App.css'
 import About from './pages/About'
 import Cart from './pages/Cart'
 import Product from './pages/Product'
@@ -11,7 +12,7 @@ import PlaceOrder from './pages/PlaceOrder'
 import Orders from './pages/Orders'
 import Login from './pages/Login'
 import NavBar from './components/NavBar'
-import './style/App.css'
+
 
 const App = () => {
   return (

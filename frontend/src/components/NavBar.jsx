@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { assets } from '../assets/assets';
 import { Link, NavLink } from 'react-router-dom';
-import '../style/NavBar.css';
 import DropDown from './DropDown';
+import '../style/NavBar.css';
 
 const NavBar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
