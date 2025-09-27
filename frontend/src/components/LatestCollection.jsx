@@ -35,8 +35,8 @@ const LatestCollection = () => {
 
   if (!products || products.length === 0) {
     return (
-      <div className='my-10 mx-10'>
-        <div className='text-center py-8 text-3xl'>
+      <div className='my-10 mx-10 '>
+        <div className='text-center py-8 text-3xl mt-20'>
           <Title text1={'LATEST '} text2={' COLLECTIONS'} />
           <p className='w-3/4 mx-auto my-4 text-gray-600'>
             No products available at the moment.
