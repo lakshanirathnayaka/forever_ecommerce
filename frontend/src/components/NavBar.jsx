@@ -19,8 +19,7 @@ const NavBar = () => {
       
       // Close sidebar if clicking outside of it
       if (sidebarRef.current && !sidebarRef.current.contains(event.target) && 
-          event.target.className !== 'menu-icon' && 
-          !event.target.closest('.menu-icon')) {
+          !event.target.closest('.mobile-menu-btn')) {
         setSidebarVisible(false);
       }
     };
@@ -44,9 +43,8 @@ const NavBar = () => {
       {/* Desktop Navbar - Top */}
       <div className='navbar-desktop'>
         <Link to='/'>
-        <img src={assets.logo} className='w-36' alt="Company Logo" />
+          <img src={assets.logo} className='w-36' alt="Company Logo" />
         </Link>
-        
         
         <ul className='navbar-desktop-menu'>
           <li className='flex flex-col items-center gap-1'>
@@ -57,7 +55,6 @@ const NavBar = () => {
               }
             >
               <p className='navbar-text'>Home</p>
-              
             </NavLink>
           </li>
           
@@ -69,7 +66,6 @@ const NavBar = () => {
               }
             >
               <p className='navbar-text'>Collection</p>
-             
             </NavLink>
           </li>
           
@@ -81,7 +77,6 @@ const NavBar = () => {
               }
             >
               <p className='navbar-text'>About</p>
-             
             </NavLink>
           </li>
           
@@ -93,7 +88,6 @@ const NavBar = () => {
               }
             >
               <p className='navbar-text'>Contact</p>
-              
             </NavLink>
           </li>
         </ul>
@@ -120,7 +114,21 @@ const NavBar = () => {
 
       {/* Mobile Top Header - Minimal */}
       <div className='mobile-top-header'>
-        <img src={assets.logo} className='mobile-logo' alt="Company Logo" />
+        <button 
+          className='mobile-menu-btn'
+          onClick={toggleSidebar}
+          aria-label="Open menu"
+        >
+          <img src={assets.menu_icon || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='3' y1='6' x2='21' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='12' x2='21' y2='12'%3E%3C/line%3E%3Cline x1='3' y1='18' x2='21' y2='18'%3E%3C/line%3E%3C/svg%3E"} 
+          className='mobile-menu-icon' 
+          alt="Menu"
+        />
+        </button>
+        
+        <Link to='/'>
+          <img src={assets.logo} className='mobile-logo' alt="Company Logo" />
+        </Link>
+        
         <div className='mobile-top-actions'>
           <img src={assets.search_icon} className='mobile-search-icon' alt="Search"/>
           <div className='profile-image-container' ref={dropdownRef}>
@@ -194,9 +202,13 @@ const NavBar = () => {
         <div className='sidebar-content'>
           <div className='sidebar-header'>
             <h3 className='sidebar-title'>Menu</h3>
-            <div className='flex items-center gap-4 cursor-pointer' onClick={toggleSidebar}>
-              <img className='h-5 rotate-180' src={assets.dropdown_icon} alt='Close'/>
-            </div>
+            <button 
+              className='sidebar-close-btn'
+              onClick={toggleSidebar}
+              aria-label="Close menu"
+            >
+              <img className='h-5' src={assets.dropdown_icon} alt='Close'/>
+            </button>
           </div>
           
           <NavLink className='sidebar-link' to='/contact' onClick={toggleSidebar}>
